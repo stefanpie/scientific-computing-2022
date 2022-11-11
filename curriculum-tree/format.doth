@@ -1,0 +1,9 @@
+#define concept_node(node_name, node_label, ...) \
+    node_name [label = node_label, shape = "box",\
+               style = "filled",\
+               fillcolor = "lightblue"]
+
+#define library_node(node_name, node_label, ...) \
+    node_name [label = node_label, shape = "box",\
+               style = "rounded,filled",\
+               fillcolor = "lightgreen"]

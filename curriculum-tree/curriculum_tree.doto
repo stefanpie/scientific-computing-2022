@@ -1,0 +1,84 @@
+digraph G {
+    graph [
+        rankdir=TB,
+        layout=dot,
+        node_spacing=0.5,
+        concentrate=true,
+        dpi=300,
+        fontsize=16,
+        fontcolor=black,
+    ];
+    fontname="Helvetica,Arial,sans-serif";
+ node [fontname="Helvetica,Arial,sans-serif"];
+ edge [fontname="Helvetica,Arial,sans-serif"];
+    course_intro [label = "Course Introduction", shape = "box", style = "filled", fillcolor = "lightblue"]
+    intro_to_python [label = "Introduction to Python", shape = "box", style = "filled", fillcolor = "lightblue"]
+    python_core_concepts [label = "Python Core Concepts", shape = "box", style = "filled", fillcolor = "lightblue"]
+    advanced_python [label = "Advanced Python", shape = "box", style = "filled", fillcolor = "lightblue"]
+    python_standard_library [label = "Python Standard Library", shape = "box", style = "filled", fillcolor = "lightblue"]
+    algo_and_data_structures [label = "Algorithms and Data Structures", shape = "box", style = "filled", fillcolor = "lightblue"]
+    numpy [label = "NumPy", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    pandas [label = "Pandas", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    matplotlib [label = "Matplotlib", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    seaborn [label = "Seaborn", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    scipy [label = "SciPy", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    networkx [label = "NetworkX", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    sympy [label = "SymPy", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    course_intro -> intro_to_python;
+    subgraph cluster_python_basics {
+        label = "Python and Programming";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+        intro_to_python -> python_core_concepts;
+        python_core_concepts -> advanced_python;
+        python_core_concepts -> python_standard_library;
+        python_core_concepts -> algo_and_data_structures;
+    }
+    python_core_concepts -> numpy;
+    subgraph cluster_python_libraries {
+        label="Python Libraries";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+        numpy -> matplotlib -> seaborn;
+        numpy -> pandas -> seaborn;
+        numpy -> scipy;
+        numpy -> networkx;
+        numpy -> sympy;
+    }
+    intro_to_opt [label = "Introduction to Optimization", shape = "box", style = "filled", fillcolor = "lightblue"]
+    linear_opt [label = "Linear Optimization", shape = "box", style = "filled", fillcolor = "lightblue"]
+    integer_opt [label = "Integer & Mixed-Integer Optimization", shape = "box", style = "filled", fillcolor = "lightblue"]
+    combinatorial_opt [label = "Combinatorial Optimization", shape = "box", style = "filled", fillcolor = "lightblue"]
+    nonlinear_opt [label = "Nonlinear Optimization", shape = "box", style = "filled", fillcolor = "lightblue"]
+    genetic_algo [label = "Genetic Algorithms", shape = "box", style = "filled", fillcolor = "lightblue"]
+    simulated_annealing [label = "Simulated Annealing", shape = "box", style = "filled", fillcolor = "lightblue"]
+    relaxation_approx [label = "Relaxation & Approximation", shape = "box", style = "filled", fillcolor = "lightblue"]
+    scipy_opt [label = "SciPy (scipy.optimize)", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    pulp [label = "PuLP", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    pymoo [label = "Pymoo", shape = "box", style = "rounded,filled", fillcolor = "lightgreen"]
+    course_intro -> intro_to_opt;
+    subgraph cluster_optimization_basic {
+        label = "Optimization Basics";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+        intro_to_opt -> linear_opt;
+        intro_to_opt -> integer_opt;
+        intro_to_opt -> combinatorial_opt;
+        intro_to_opt -> scipy_opt;
+        intro_to_opt -> pulp;
+    }
+    intro_to_opt -> nonlinear_opt;
+    subgraph cluster_optimization_advanced {
+        label = "Advanced Optimization";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+        nonlinear_opt -> genetic_algo;
+        nonlinear_opt -> simulated_annealing;
+        nonlinear_opt -> relaxation_approx;
+        nonlinear_opt -> pymoo;
+    }
+}

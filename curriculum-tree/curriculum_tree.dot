@@ -1,0 +1,132 @@
+#include "format.doth"
+
+digraph G {
+    // graph
+    graph [
+        rankdir=TB,
+        layout=dot,
+        // splines=ortho,
+        node_spacing=0.5,
+        concentrate=true,
+        // splines=true,
+        dpi=300,
+        fontsize=16,
+        fontcolor=black,
+
+    ];
+    
+
+    fontname="Helvetica,Arial,sans-serif";
+	node [fontname="Helvetica,Arial,sans-serif"];
+	edge [fontname="Helvetica,Arial,sans-serif"];
+
+    // nodes
+    concept_node(course_intro, "Course Introduction")
+
+
+    concept_node(intro_to_python, "Introduction to Python")
+    concept_node(python_core_concepts, "Python Core Concepts")
+    concept_node(advanced_python, "Advanced Python")
+    concept_node(python_standard_library, "Python Standard Library")
+    concept_node(algo_and_data_structures, "Algorithms and Data Structures")
+
+    library_node(numpy, "NumPy")
+    library_node(pandas, "Pandas")
+    library_node(matplotlib, "Matplotlib")
+    library_node(seaborn, "Seaborn")
+    library_node(scipy, "SciPy")
+    library_node(networkx, "NetworkX")
+    library_node(sympy, "SymPy")
+
+    course_intro -> intro_to_python;
+
+    subgraph cluster_python_basics {
+        label = "Python and Programming";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+
+        intro_to_python -> python_core_concepts;
+        python_core_concepts -> advanced_python;
+        python_core_concepts -> python_standard_library;
+        python_core_concepts -> algo_and_data_structures;
+    }
+
+    python_core_concepts -> numpy;
+
+    subgraph cluster_python_libraries {
+        label="Python Libraries";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+
+        
+        // python_core_concepts -> pandas;
+        // python_core_concepts -> matplotlib;
+        // python_core_concepts -> seaborn;
+        // python_core_concepts -> scipy;
+        // python_core_concepts -> networkx;
+        // python_core_concepts -> sympy;
+
+        numpy -> matplotlib -> seaborn;
+        numpy -> pandas -> seaborn;
+        numpy -> scipy;
+        numpy -> networkx;
+        numpy -> sympy;
+    }
+
+    concept_node(intro_to_opt, "Introduction to Optimization")
+    
+    concept_node(linear_opt, "Linear Optimization")
+    concept_node(integer_opt, "Integer & Mixed-Integer Optimization")
+    concept_node(combinatorial_opt, "Combinatorial Optimization")
+
+    concept_node(nonlinear_opt, "Nonlinear Optimization")
+
+    concept_node(genetic_algo, "Genetic Algorithms")
+    concept_node(simulated_annealing, "Simulated Annealing")
+    concept_node(relaxation_approx, "Relaxation & Approximation")
+
+    library_node(scipy_opt, "SciPy (scipy.optimize)")
+    library_node(pulp, "PuLP")
+    library_node(pymoo, "Pymoo")
+
+    course_intro -> intro_to_opt;
+
+
+    subgraph cluster_optimization_basic {
+        label = "Optimization Basics";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+
+        intro_to_opt -> linear_opt;
+        intro_to_opt -> integer_opt;
+        intro_to_opt -> combinatorial_opt;
+
+        intro_to_opt -> scipy_opt;
+        intro_to_opt -> pulp;
+    }
+
+    intro_to_opt -> nonlinear_opt;
+
+    subgraph cluster_optimization_advanced {
+        label = "Advanced Optimization";
+        labeljust = "r";
+        labelloc = "b";
+        style=dotted;
+
+
+        nonlinear_opt -> genetic_algo;
+        nonlinear_opt -> simulated_annealing;
+        nonlinear_opt -> relaxation_approx;
+
+        nonlinear_opt -> pymoo;
+    }
+
+
+
+
+
+
+}
