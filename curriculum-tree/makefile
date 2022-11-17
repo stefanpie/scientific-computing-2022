@@ -4,10 +4,14 @@ IMAGES  = $(SOURCES:.dot=.png)
 
 .SECONDARY: $(OBJS)
 
-all: $(IMAGES)
+# log source files
+$(info $(IMAGES))
 
 %.png: %.doto
 	dot -Tpng $< > $@
 
 %.doto: %.dot
 	cpp -P $< > $@
+
+all: $(IMAGES)
+

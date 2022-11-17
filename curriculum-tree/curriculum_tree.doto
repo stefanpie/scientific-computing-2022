@@ -2,6 +2,7 @@ digraph G {
     graph [
         rankdir=TB,
         layout=dot,
+        splines=ortho,
         node_spacing=0.5,
         concentrate=true,
         dpi=300,
@@ -10,7 +11,7 @@ digraph G {
     ];
     fontname="Helvetica,Arial,sans-serif";
  node [fontname="Helvetica,Arial,sans-serif"];
- edge [fontname="Helvetica,Arial,sans-serif"];
+ edge [fontname="Helvetica,Arial,sans-serif",headport=n, tailport=s];
     course_intro [label = "Course Introduction", shape = "box", style = "filled", fillcolor = "lightblue"]
     intro_to_python [label = "Introduction to Python", shape = "box", style = "filled", fillcolor = "lightblue"]
     python_core_concepts [label = "Python Core Concepts", shape = "box", style = "filled", fillcolor = "lightblue"]

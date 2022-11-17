@@ -1,0 +1,93 @@
+[
+  {
+    "title": "What is Computing",
+    "type": "Lesson",
+    "tag": "Introduction",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Intorduction to Python",
+    "type": "Lesson",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Python Core Concepts",
+    "type": "Lesson",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Algorithms and Data Structures",
+    "type": "Lesson",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Advanced Python Features",
+    "type": "Lesson",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "The Python Standard Library",
+    "type": "Lesson",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "NumPy",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Matplotlib",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Pandas",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "Seaborn",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "SciPy",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "NetworkX",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  },
+  {
+    "title": "SymPy",
+    "type": "Library",
+    "tag": "Python",
+    "slides_link": null,
+    "video_link": null
+  }
+]

@@ -5,14 +5,13 @@ digraph G {
     graph [
         rankdir=TB,
         layout=dot,
-        // splines=ortho,
+        splines=ortho,
         node_spacing=0.5,
         concentrate=true,
-        // splines=true,
+        splines=true,
         dpi=300,
         fontsize=16,
         fontcolor=black,
-
     ];
     
 
@@ -123,10 +122,6 @@ digraph G {
 
         nonlinear_opt -> pymoo;
     }
-
-
-
-
 
 
 }

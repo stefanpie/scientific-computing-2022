@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {{meta.siteName}}
+        </title>
+        <meta name="description" content="{{meta.siteDescription}}">
+        <meta name="author" content="{{meta.siteAuthor}}">
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!-- personal academic website -->
+        <!-- section for Overview -->
+        <!-- section for Learning Tree -->
+        <!-- section for course-materials -->
+        <!-- section for Contact -->
+
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#learning-tree">Learning Tree</a>
+            <a href="#course-materials">Course Materials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <main>
+            <div id="overview">
+                <h1>Scientific Computing</h1>
+
+                <p>This course is taught by <a href="https://stefanabikaram.com">Stefan Abi-Karam</a> as part of the Summer Science Research Program at <a href="https://www.ahschool.com/broward-campus">American Heritage School</a>.</p>
+
+
+                <h2>Course Overview</h2>
+                <p>
+                    This course introduces and teaches researchers various scientific computing topics to directly apply them to their applied research areas.
+                    Both high-level understanding and practical technical skills needed for implementation are covered.
+                    The style of this course is designed to be interactive and application-driven, with real-world research examples and demos.
+                </p>
+                <p>
+                    The main objectives of this course are listed below:
+                    <ul>
+                        <li>Learn Python and Computer Science Foundations as Practical and Powerful Problem-Solving Tools</li>
+                        <li>Learn the Concepts and Tools Most Frequently Used in Scientific Computing</li>
+                        <li>Learn the Foundation and Application of Data Science and Machine Learning</li>
+                        <li>Learn How to Communicate and Visualize Scientific Data and Ideas</li>
+                    </ul>
+                </p>
+            </div>
+
+            <div id="learning-tree">
+                <h2>Learning Tree</h2>
+                <p>
+                    The topics in this course are organized into a learning tree.
+                    Students can start at the root of the tree and work their way through the tree by engaging in topic lectures and videos.
+                    The tree provides a path for students to learn lessons in an order that makes the most sense, allowing for self-paced learning.
+                </p>
+
+                <img src="img/curriculum_tree.png" alt="curriculum_tree">
+            </div>
+
+            <div id="course-materials">
+                <h2>Course Materials</h2>
+                <p>
+                    Below are all the course materials for the course.
+                    If you find a mistake or typo, please reach out with details.
+                    If you are an instructor and would like special course materials such as solutions, please reach out to me directly.
+                </p>
+
+                <h3>Lessons</h3>
+                <ul>
+                {% for l in lessons %}
+                    <li>
+                        <strong>{{l.title}}</strong>
+                        <br>
+                        | {{l.tag}} | {{l.type}} | <a href="{{l.slides_link}}">Slides</a> | <a href="{{l.video_link}}">Video</a> |
+                    </li>
+                {% endfor %}
+                </ul>
+
+                <h3>Demonstrations</h3>
+                <h3>Assignments</h3>
+            </div>
+\
+            <div id="contact">
+                <h2>Contact</h2>
+                <p>Website:
+                    <a href="stefanabikaram.com">stefanabikaram.com</a>
+                </p>
+                <p>AHS Email:
+                    <a href="mailto:stefan.abi-karam@ahschool.com">stefan.abi-karam@ahschool.com</a>
+                <p>GT Email:
+                    <a href="mailto:stefanabikaram@gatech.edu">stefanabikaram@gatech.edu</a>
+                </p>
+                <p>LinkedIn:
+                    <a href="https://www.linkedin.com/in/stefanabikaram">www.linkedin.com/in/stefanabikaram</a>
+                </p>
+                <p>Google Scholar:
+                    <a href="https://scholar.google.com/citations?user=y1QO9ooAAAAJ">https://scholar.google.com/citations?user=y1QO9ooAAAAJ</a>
+                </p>
+                <p>GitHub:
+                    <a href="https://github.com/stefanpie">github.com/stefanpie</a>
+                </p>
+            </div>
+
+        </main>
+
+    </body>
+</html>
