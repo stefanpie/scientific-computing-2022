@@ -1,8 +1,26 @@
-\documentclass[]{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 
+\usetheme{default}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
 \title{Introduction to Scientific Computing and Data Science}
-\date{}
+\subtitle{Scientific Computing}
+\author{Stefan Abi-Karam}
+\date{Summer 2023}
+
 
 \begin{document}
 
@@ -10,6 +28,8 @@
     \titlepage
 \end{frame}
 
+
+\section{Course Overview}
 
 \begin{frame}{Course Goals}
 
@@ -74,66 +94,68 @@
 
     \begin{itemize}
         \item Email: \href{mailto:stefan.abi-karam@ahschool.com}{stefan.abi-karam@ahschool.com}
-        \begin{itemize}
-            \item Absence, Personal Concerns, Project Questions and Feedback
-            \item Please use your Heritage email address as well
-        \end{itemize}
+              \begin{itemize}
+                  \item Absence, Personal Concerns, Project Questions and Feedback
+                  \item Please use your Heritage email address as well
+              \end{itemize}
 
         \item Google Classroom
-        \begin{itemize}
-            \item \textbf{Homework Assignments}
-            \item Class meeting link
-            \item Class announcements and changes
-        \end{itemize}
+              \begin{itemize}
+                  \item \textbf{Homework Assignments}
+                  \item Class meeting link
+                  \item Class announcements and changes
+              \end{itemize}
 
         \item Campuswire
-        \begin{itemize}
-            \item \textbf{Questions about Homework}
-        \end{itemize}
+              \begin{itemize}
+                  \item \textbf{Questions about Homework}
+              \end{itemize}
 
         \item Office Hours
-        \begin{itemize}
-            \item \textbf{Questions about Homework}
-            \item \textbf{Questions about Projects}
-        \end{itemize}
-        
+              \begin{itemize}
+                  \item \textbf{Questions about Homework}
+                  \item \textbf{Questions about Projects}
+              \end{itemize}
+
         \item Slack
-        \begin{itemize}
-            \item Project Questions and Feedback, Quick Updates, Meeting Links and Reminders
-        \end{itemize}
+              \begin{itemize}
+                  \item Project Questions and Feedback, Quick Updates, Meeting Links and Reminders
+              \end{itemize}
     \end{itemize}
 
 \end{frame}
 
+\section{About Your Teacher}
+
+
 \begin{frame}{About Your Teacher}
-    
-    \textbf{Timeline}
+
     \begin{itemize}
         \item Graduated from American Heritage in 2018
         \item B.S. in Electrical Engineering in 2021
         \item M.S. in Electrical Engineering in 2022
         \item Ph.D. + Research Faculty 2023 and beyond
     \end{itemize}
-    
-    \textbf{Research}
 
-    My research is focused on hardware acceleration of machine learning algorithms and applied machine learning for hardware design tools and emerging technologies.
+    \textbf{Research}: My research is focused on hardware acceleration of machine learning algorithms and applied machine learning for hardware design tools and emerging technologies.
 
     \vspace{\baselineskip}
 
     % three images in one row
     \begin{columns}[t]
         \begin{column}{0.33\textwidth}
-            \includegraphics[width=\textwidth]{imgs/me_0.jpg}
+            \centering
+            \includegraphics[width=0.8\textwidth]{imgs/me_0.jpg}
         \end{column}
         \begin{column}{0.33\textwidth}
-            \includegraphics[width=\textwidth]{imgs/me_1.jpg}
+            \centering
+            \includegraphics[width=0.8\textwidth]{imgs/me_1.jpg}
         \end{column}
         \begin{column}{0.33\textwidth}
-            \includegraphics[width=\textwidth]{imgs/me_2.jpg}
+            \centering
+            \includegraphics[width=0.8\textwidth]{imgs/me_2.jpg}
         \end{column}
     \end{columns}
-
 \end{frame}
 
 \begin{frame}{About Your Teacher}
@@ -141,9 +163,9 @@
     \textbf{More Details}
     \begin{itemize}
         \item \href{https://sharclab.ece.gatech.edu/}{SHARC Lab, ECE, Georgia Tech}
-        % \item CIPHER Lab, Georgia Tech Research Institute
+              % \item CIPHER Lab, Georgia Tech Research Institute
         \item \href{https://www.gtri.gatech.edu/laboratories/cybersecurity-information-protection-and-hardware-evaluation-research}{CIPHER Lab, Georgia Tech Research Institute}
-        % \item Georgia Tech Undergraduate Admissions
+              % \item Georgia Tech Undergraduate Admissions
         \item \href{https://admission.gatech.edu/}{Georgia Tech Undergraduate Admissions}
     \end{itemize}
 
@@ -157,13 +179,16 @@
         \item Hobby Electronics and Programming
         \item Reading
     \end{itemize}
-    
+
 \end{frame}
 
 \begin{frame}{About Your Teacher}
-    \includegraphics[width=\textwidth]{imgs/me_3.jpg}
+    \centering
+    \includegraphics[width=0.9\textwidth]{imgs/me_3.jpg}
 \end{frame}
 
+
+\section{Scientific Computing Overview}
 
 \begin{frame}{What is Computing?}
 
@@ -173,17 +198,19 @@
             ---Edsger W. Dijkstra
         \end{flushleft}
     \end{quote}
-    
+
 \end{frame}
 
 \begin{frame}{Scientific Computing - Earth Science and Engineering}
-    \includegraphics[width=\textwidth]{imgs/vis_0.jpg}
-    \includegraphics[width=\textwidth]{imgs/vis_1.jpg}
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/vis_0.jpg}
+    \includegraphics[width=0.7\textwidth]{imgs/vis_1.jpg}
 \end{frame}
 
 \begin{frame}{Scientific Computing - Biology and Medicine}
-    \includegraphics[width=0.9\textwidth]{imgs/vis_2.jpg}
-    \includegraphics[width=0.9\textwidth]{imgs/vis_3.jpg}
+    \centering
+    \includegraphics[width=0.65\textwidth]{imgs/vis_2.jpg}
+    \includegraphics[width=0.65\textwidth]{imgs/vis_3.jpg}
 \end{frame}
 
 \begin{frame}{What is Data Science?}
@@ -193,10 +220,12 @@
 \end{frame}
 
 \begin{frame}{Data Science - COVID-19}
-    \includegraphics[width=\textwidth]{imgs/vis_4.jpg}
+    \centering
+    \includegraphics[width=0.9\textwidth]{imgs/vis_4.jpg}
 \end{frame}
 
 \begin{frame}{Data Science - General Applications}
+    \centering
     \includegraphics[width=\textwidth]{imgs/vis_5.jpg}
 \end{frame}
 
@@ -211,7 +240,7 @@
     \vspace{\baselineskip}
 
     In the same way that electricity transformed our world, AI will transform our world and will be incorporated into every aspect of our lives.
-    
+
 \end{frame}
 
 
@@ -241,14 +270,17 @@
 \end{frame}
 
 
-
 \begin{frame}{Machine Learning - Protien Folding}
-    \includegraphics[width=\textwidth]{imgs/vis_9.jpg}
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/vis_9.jpg}
 \end{frame}
 
 \begin{frame}{Machine Learning - Protien Folding}
-    \includegraphics[width=\textwidth]{imgs/vis_8.jpg}
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/vis_8.jpg}
 \end{frame}
+
+\section{Closing Advice}
 
 \begin{frame}{Closing Advice}
     \begin{itemize}
@@ -256,7 +288,7 @@
         \item There is no such thing as a dumb question; if you have a question or a gap in your understanding, ask about it as soon as possible.
         \item I am flexible about a lot of things if you come to me early and talk to me directly.
         \item I have a good sense of humor, so any class or research memes are encouraged.
-        
+
     \end{itemize}
 \end{frame}
 

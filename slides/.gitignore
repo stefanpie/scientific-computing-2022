@@ -10,3 +10,5 @@
 # *.pdf
 *.nav
 *.synctex.gz
+*.snm
+*.toc

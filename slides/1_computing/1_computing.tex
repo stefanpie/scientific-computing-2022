@@ -1,8 +1,26 @@
-\documentclass[]{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage[utf8]{inputenc}
 
+\usetheme{default}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
 \title{What is Computing?}
-\date{}
+\subtitle{Scientific Computing}
+\author{Stefan Abi-Karam}
+\date{Summer 2023}
+
 
 \begin{document}
 
@@ -10,9 +28,18 @@
     \titlepage
 \end{frame}
 
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Computers}
+
 \begin{frame}{What is a Computer?}
 
     \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \includegraphics[width=0.8\textwidth]{imgs/vis_0.jpg}
+        \end{column}
         \begin{column}{0.5\textwidth}
             A "computer" is anything that executes a set of defined instructions.
 
@@ -23,9 +50,6 @@
                 \item We can assume instructions are executed one at a time in order.
                 \item In the common sense of the word, we will be talking about computers like your laptop or desktop computer (or also your phone).
             \end{itemize}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{imgs/vis_0.jpg}
         \end{column}
     \end{columns}
 \end{frame}
@@ -63,6 +87,8 @@
     \end{columns}
 
 \end{frame}
+
+\section{Computer Hardware}
 
 \begin{frame}{Lowest Level of a Computer}
     In the lowest level of hardware, there are several components:
@@ -102,26 +128,63 @@
 
 \begin{frame}{Lowest Level of a Computer}
 
-
-
     \begin{columns}
         \begin{column}{0.5\textwidth}
-            These elements usually make up your computer's central processing unit, or CPU.
-
-            \vspace{\baselineskip}
-
-            In reality, your computer can have more than one copy of a CPU "core" to do different things simultaneously, making it faster to compute overall.
-
-            \vspace{\baselineskip}
-
-            Your computer also has a bunch of extra hardware to handle power, graphics, storage, and interfacing with other things like your mouse, keyboard, screen, camera, USB port, wifi chip, ...
+            \includegraphics[width=\textwidth]{imgs/vis_5.jpg}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \includegraphics[width=\textwidth]{imgs/vis_5.jpg}
+            These elements usually make up your computer's central processing unit, or CPU.
+            \vspace{\baselineskip}
+            In reality, your computer can have more than one copy of a CPU "core" to do different things simultaneously, making it faster to compute overall.
+            \vspace{\baselineskip}
+            Your computer also has a bunch of extra hardware to handle power, graphics, storage, and interfacing with other things like your mouse, keyboard, screen, camera, USB port, wifi chip, ...
         \end{column}
     \end{columns}
 
 \end{frame}
+
+\begin{frame}{Making a Computer}
+    
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{imgs/vis_7.png}
+                \\
+                \href{https://eater.net/8bit}{"Build an 8-bit computer from scratch"}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            You (yes you!) can make your own computer very easily from scratch. In fact RISC-V and other open-source hardware tools are commnly used by both students and professionals to do reseach and develop new hardware.
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}{Making a Computer}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{imgs/oseda.jpg}
+                \\
+                \href{https://www.youtube.com/watch?v=OmEbzRp_NGg}{"The Promise of Open Source Semiconductor Design Tools"}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{imgs/tapeout_chip.jpg}
+                \\
+                Example of a fabricated chip using open-source tools and fabrication technology
+            \end{figure}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\section{Computer Software}
 
 \begin{frame}{Computer Instructions}
     At the lowest level, each CPU hardware design has a set of basic instructions called an Instruction Set Architecture or \textbf{ISA}.
@@ -147,7 +210,7 @@
 \begin{frame}{Computer Instructions}
     \begin{figure}
         \centering
-        \includegraphics[width=0.7\textwidth]{imgs/vis_6.png}
+        \includegraphics[width=0.5\textwidth]{imgs/vis_6.png}
         \\
         An example of a simple ISA
     \end{figure}
@@ -156,18 +219,56 @@
 \begin{frame}{Computer Instructions}
     \begin{figure}
         \centering
-        \includegraphics[width=0.7\textwidth]{imgs/vis_6.png}
+        \includegraphics[width=0.6\textwidth]{imgs/RV32IMAC_Instruction_Set.svg.png}
         \\
-        An example of a simple ISA
+        An example of a RISC-V ISA
     \end{figure}
 \end{frame}
 
+\begin{frame}{Programming Langauges}
 
-\begin{frame}{Making a Computer}
+    Programmers want a more expressive way to write programs for their computers with more features rather than just the assembly language
 
+    \vspace{\baselineskip}
+
+    They designed higher level languages that can be translated, aka compiled, into lower level code (ex. an ISA)
+
+    \vspace{\baselineskip}
+
+    These higher level languages have more useful features and better language and syntax
+    % Standard libraries for things like math, file reading, networking, graphics, user interfaces 
+    % Memory management
+    % bullet points
+
+    \begin{itemize}
+        \item Standard libraries for things like math, file reading, networking, graphics, user interfaces
+        \item Memory management
+        \item Concurrency and parallelism
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Programming Langauges}
+    You can now build higher level functionality like a file system, a desktop user interface, user management, networking (wifi and ethernet), a way to run other applications, and a web browser
+
+    \vspace{\baselineskip}
+    
+    All of a sudden you have an operating system
+    \begin{itemize}
+        \item That previous point kinda sounds like Chrome OS on your Chromebook
+        \item Windows, Mac, Linux
+    \end{itemize}
 
 \end{frame}
 
+\begin{frame}{Programming Langauges}
 
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{imgs/vis_8.jpg}
+        \\
+        Example of abstaction for software and hardware layers
+    \end{figure}
+\end{frame}
 
 \end{document}
